@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<form method="POST" action="https://api.mediabuyingteem.top/add/lendings/statisctics/" id="form">
+        <input type="text" name="name" value="Test Name"/>
+        <input type="text" name="email" value="mail@mail.mail"/>
+        <input type="text" name="phone" value="991122333"/>
+        <input type="text" name="amount" value="1000"/>
+        <input type="hidden" name="access-token"
+            value="658554c11edec433a845c22ab66516f9" />
+        <input type="submit" />
+    </form>
+    <script type="text/javascript">
+    	function testme(){
+    		$.post("https://api.mediabuyingteem.top/add/lendings/statisctics/", $("#form").serialize(), function(data) {
+    				console.log(data);
+            });
+    	}
+    </script>
+</body>
+</html>

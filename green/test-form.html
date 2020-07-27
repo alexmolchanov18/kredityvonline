@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<form name="contact">  
+	<input name="phone" type="text" placeholder="phone" required>
+  <input name="email" type="email" placeholder="Email" required>  
+  <button type="submit">Send</button>  
+ </form>  
+ <script>    
+$(document).ready(function(){
+
+     var dataLink = $('a#link-btn').data('link');
+     dataLink = dataLink.replace(/#/g, '');
+     
+     $('#link-btn').click(function(e){
+       $('.form-container').fadeIn();
+
+       // const scriptURL = 'https://script.google.com/macros/s/AKfycbyh9XHXpagz15ATSvIo66qjZMvh9LOAlm_aWluCZVyPbMzfZzce/exec';
+       const scriptURL = '#';
+       const form = document.forms['contact'];
+       const loading = document.querySelector('.js-loading');
+       const successMessage = document.querySelector('.js-success-message');
+       const errorMessage = document.querySelector('.js-error-message');
+
+       form.addEventListener('submit', e => {
+        e.preventDefault();
+        showLoadingIndicator();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+           .then(response => showSuccessMessage(response))
+           .catch(error => showErrorMessage(error))
+       });
+
+       function showLoadingIndicator () {
+         form.classList.add('is-hidden')
+         loading.classList.remove('is-hidden')
+       }
+
+       function showSuccessMessage (response) {
+         console.log('Success!', response)
+         setTimeout(() => {
+           window.location.href = dataLink; // redirect
+
+           successMessage.classList.remove('is-hidden')
+           loading.classList.add('is-hidden')
+         }, 500)
+       }
+
+       function showErrorMessage (error) {
+         console.error('Error!', error.message)
+         setTimeout(() => {
+           window.location.href = dataLink; // redirect
+
+           errorMessage.classList.remove('is-hidden')
+           loading.classList.add('is-hidden')
+         }, 500)
+       }
+     })
+
+
+
+     $('.js-name').val('test');
+     $('.js-mail').val('test@test.com');
+     $('.js-phone').val('+380 066 000 11 22');
+
+     // $('.js-utm_source').val(foo);
+     // $('.js-utm_medium').val(boo);
+
+     $('.js-close').click(function(){
+       $('.form-container').fadeOut();
+     })
+   });
+ </script>  
+
+</body>
+</html>

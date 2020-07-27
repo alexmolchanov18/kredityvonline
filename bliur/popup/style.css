@@ -1,0 +1,218 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*{
+	box-sizing: border-box;
+}
+*:focus {outline:none}
+
+body{
+	margin: 0;
+}
+.b-popup{
+    width:100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow:hidden;
+    position:fixed;
+    top:0px;
+    vertical-align: middle;
+	display: flex;
+	align-items: center;
+}
+#coloredSlider .ui-slider-range { 
+	background: #ff0000 !important; 
+}
+.b-popup-content{
+    width: 100%;
+    max-width: 992px;
+    margin: 0 auto;
+    background: url("../images/green-back.png") no-repeat 0 0;
+    background-size: 100%;
+    background-position: center;
+    position: relative;
+}
+#close-btn{
+	position: absolute;
+	width: 33px;
+	height: 33px;
+	right: 22px;
+	top: 22px;
+	cursor: pointer;
+}
+.top-name{
+    margin-top: 15px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.top-name p{
+    margin: 0;
+    color: #fff;
+    font-size: 24px;
+}
+.top-name p:first-child{
+    color: #fff;
+    font-size: 54px;
+    font-weight: 600;
+}
+.top-name p:last-child{
+    padding-top: 30px;
+}
+.block-form{
+    width: 100%;
+    max-width: 944px;
+    background: url("../images/form-bg.png") no-repeat 0 0;
+    background-size: 100%;
+    margin: 0 24px;
+    height: 213px;
+}
+.summ-credit{
+    margin: 0 44px;
+}
+.summ-credit p{
+    color: #fff;
+    font-size: 18px;
+    padding: 20px 0;
+    margin: 0;
+}
+.summ-credit span{
+	font-size: 14px;
+	color: #fff;
+}
+.last-span{
+	margin-left: 790px;
+}
+.ui-slider-handle:before {
+	content: attr(data-value);
+	padding-top: 14px;
+	color: #000;
+	position: relative;
+	top: 37px;
+	background: url(../images/sum-output.png) no-repeat 0 0;
+	width: 87px;
+	height: 35px;
+	text-align: center;
+	display: inline-block;
+	margin-left: -15px;
+	left: 8px;
+}
+.ui-slider-handle:after{
+	content: "";
+	position: absolute;
+	background: url("../images/grn-icon.png") no-repeat 0 0;
+	width: 8px;
+	height: 12px;
+	top: 53px;
+}
+.ui-slider-handle:focus {
+	outline: none!important;
+}
+.cost-slider{
+	margin-bottom: 12px;
+}
+
+.form{
+    margin: 30px 44px;
+}
+.form form{
+	display: flex;
+	justify-content: space-between;
+}
+.form form input{
+	border: none;
+	width: 270px;
+	padding: 20px 13px;
+	font-size: 18px;
+	border-radius: 12px;
+}
+.form form button{
+	width: 241px;
+	border-radius: 12px;
+	border: none;
+	font-size: 18px;
+	background: #ffd300;
+	cursor: pointer;
+	box-shadow: 0px 3px 3px rgba(0,0,0,0.5), inset 1px -3px 0px rgba(0,0,0,0.5)ч;	
+}
+.how-to-block{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	margin-top: 35px;
+	margin-bottom: 15px;
+}
+.name-block{
+	font-size: 26px;
+	color: #fff;
+}
+.step-block{
+	margin-top: 32px;
+	display: flex;
+	justify-content: center;
+	position: relative;
+}
+.name-step{
+	font-size: 19px;
+	color: #fff;
+	margin-bottom: 40px;
+}
+.step-itm:first-child{
+	margin-right: 119px;
+}
+.step-itm:nth-child(2){
+	margin-right: 103px;
+}
+.step-itm:first-child:before, .step-itm:nth-child(2):before{
+	content: "";
+	position: absolute;
+	background: url("../images/arr.png") no-repeat 0 0;
+	background-size: 100%;
+	width: 87px;
+	height: 48px;
+	top: 77px;
+	left: 327px;
+}
+.step-itm:nth-child(2):before{
+	left: 577px;
+}
